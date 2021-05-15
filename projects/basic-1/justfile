@@ -9,16 +9,13 @@ just-choose:
 just-list:
     just --list
 
-code:
-    code .
-
 # Basic : 1 : Create Project by Composer
 create-project-basic:
-    composer create-project --prefer-dist yiisoft/yii2-app-basic ./projects/basic
+    composer create-project --prefer-dist yiisoft/yii2-app-basic ./root
 
 # Basic : 2 : Serve
 serve-basic:
-    cd ./projects/basic && php yii serve
+    cd ./root && php yii serve
 
 # Basic : 3 : Open
 open-basic:
@@ -26,16 +23,16 @@ open-basic:
 
 # Basic : 4 : Open Code by PhpStorm
 phpstorm-basic:
-    open -a "PhpStorm" ./projects/basic
+    open -a "PhpStorm" ./root
 
 # Basic : Yii Help
 help-basic-yii:
-    cd ./projects/basic && php yii help
+    cd ./root && php yii help
 
 # Basic : Yii Help Serve
-help-basiic-yii-serve:
-    cd ./projects/basic && php yii help serve
+help-basic-yii-serve:
+    cd ./root && php yii help serve
 
 # Basic : Clean
 clean-basic:
-    trash ./projects/basic
+    trash ./root
