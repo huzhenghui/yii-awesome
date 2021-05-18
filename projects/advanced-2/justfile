@@ -1,0 +1,54 @@
+_: just-choose
+
+just-choose:
+    #!/usr/bin/env sh
+    choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
+    echo "Choose Recipe: ${choose_recipe}"
+    just "${choose_recipe}"
+
+just-list:
+    just --list
+
+# Advanced : 1 : Git Clone
+git-clone-advanced:
+    git clone https://github.com/yiisoft/yii2-app-advanced root
+
+# Advanced : 2 : Composer Update
+composer-update:
+    cd ./root && composer update
+
+# Advanced : 3 : Composer Install
+composer-install:
+    cd ./root && composer install
+
+# Advanced : 4.1 : Init Development
+init-advanced-development:
+    cd ./root && php init --env=Development --overwrite=All --delete=All
+
+# Advanced : 4.2 : Init Production
+init-advanced-production:
+    cd ./root && php init --env=Production --overwrite=All --delete=All
+
+# Advanced : 5 : Serve
+serve-advanced:
+    cd ./root && php yii serve --docroot ./frontend/web
+
+# Advanced : 6 : Open
+open-advanced:
+    open 'http://localhost:8080/'
+
+# Advanced : 7 : Open Code by PhpStorm
+phpstorm-advanced:
+    open -a "PhpStorm" ./root
+
+# Advanced : Yii Help
+help-advanced-yii:
+    cd ./root && php yii help
+
+# Advanced : Yii Help Serve
+help-advanced-yii-serve:
+    cd ./root && php yii help serve
+
+# Advanced : Clean
+clean-advanced:
+    trash ./root
