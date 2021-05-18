@@ -1,5 +1,6 @@
 {
     "write-good.languages": [
         "markdown"
-    ]
+    ],
+    "search.useIgnoreFiles": false
 }
