@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../yii-template-basic-1"
+	}
+],
+  "settings": {}
+}
