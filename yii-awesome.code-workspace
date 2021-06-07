@@ -5,6 +5,12 @@
 	},
 	{
 		"path": "../yii-template-basic-1"
+	},
+	{
+		"path": "../yii-app-hello"
+	},
+	{
+		"path": "../yii-package-hello"
 	}
 ],
 "settings": {

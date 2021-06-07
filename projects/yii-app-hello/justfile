@@ -1,0 +1,50 @@
+_: just-choose
+
+just-choose:
+    #!/usr/bin/env sh
+    choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
+    echo "Choose Recipe: ${choose_recipe}"
+    just "${choose_recipe}"
+
+just-list:
+    just --list
+
+# Yii App : 1 : Git Clone
+git-clone-app:
+    git clone https://github.com/huzhenghui/yii-app-hello root
+
+# Yii App : 2 : Composer Update
+composer-update:
+    cd ./root && composer update
+
+# Yii App : 3 : Composer Install
+composer-install:
+    cd ./root && composer install
+
+# Yii App : 4 : Serve
+serve-app:
+    cd ./root && php yii serve
+
+# Yii App : 5.1 : Open Home
+open-app-home:
+    open 'http://localhost:8080/'
+
+# Yii App : 5.2 : Open Action
+open-app-action:
+    open 'http://localhost:8080/index.php?r=hello/default/index'
+
+# Yii App : 6 : Open Code by PhpStorm
+phpstorm-app:
+    open -a "PhpStorm" ./root
+
+# Yii App : 7.1 : Git Status
+git-status:
+    cd ./root && git status
+
+# Yii App : 7.2 : Diff Package
+diff-package:
+    kdiff3 ./root/vendor/huzhenghui/package-hello $(ghq list --full-path https://github.com/huzhenghui/yii-package-hello)
+
+# Yii App : Clean
+clean-app:
+    trash ./root
