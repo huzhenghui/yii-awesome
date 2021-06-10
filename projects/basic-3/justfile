@@ -1,0 +1,61 @@
+_: just-choose
+
+just-choose:
+    #!/usr/bin/env sh
+    choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
+    echo "Choose Recipe: ${choose_recipe}"
+    just "${choose_recipe}"
+
+just-list:
+    just --list
+
+# Yii App : 1 : Composer Update
+composer-update:
+    cd ./root && composer update
+
+# Yii App : 2 : Composer Install
+composer-install:
+    cd ./root && composer install
+
+# Yii App : 3 : Serve
+serve-app:
+    cd ./root && php yii serve
+
+# Yii App : 4 : Open Home
+open-app-home:
+    open 'http://localhost:8080/'
+
+# Yii App : 5 : Open Code by PhpStorm
+phpstorm-app:
+    open -a "PhpStorm" ./root
+
+# Yii App : Clean
+clean-app:
+    # copyFiles
+    trash --force -- "./root/yii"
+    trash --force -- "./root/config/console.php"
+    trash --force -- "./root/config/db.php"
+    trash --force -- "./root/config/params.php"
+    trash --force -- "./root/web/index.php"
+    trash --force -- "./root/config/web.php"
+    [[ ! -d "./root/config/" ]] || rmdir "./root/config/"
+    trash --force -- "./root/controllers/SiteController.php"
+    [[ ! -d "./root/controllers/" ]] || rmdir "./root/controllers/"
+    trash --force -- "./root/views/site/index.php"
+    [[ ! -d "./root/views/site/" ]] || rmdir "./root/views/site/"
+    trash --force -- "./root/views/layouts/main.php"
+    [[ ! -d "./root/views/layouts/" ]] || rmdir "./root/views/layouts/"
+    [[ ! -d "./root/views/" ]] || rmdir "./root/views/"
+    trash --force -- "./root/assets/AppAsset.php"
+    [[ ! -d "./root/assets/" ]] || rmdir "./root/assets/"
+    trash --force -- "./root/web/assets/.gitignore"
+    trash --force -- "./root/widgets/Alert.php"
+    [[ ! -d "./root/widgets/" ]] || rmdir "./root/widgets/"
+    # Update
+    trash --force -- "./root/vendor/"
+    trash --force -- "./root/composer.lock"
+    # Runtime
+    trash --force -- "./root/runtime/debug/"
+    [[ ! -d "./root/runtime/" ]] || rmdir "./root/runtime/"
+    trash --force -- "./root/web/assets/"
+    [[ ! -d "./root/web/" ]] || rmdir "./root/web/"
