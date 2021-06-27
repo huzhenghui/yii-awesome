@@ -1,24 +1,27 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "../yii-template-basic-1"
-	},
-	{
-		"path": "../yii-app-hello"
-	},
-	{
-		"path": "../yii-package-hello"
-	}
-],
-"settings": {
-	"files.exclude": {
-		"**/.classpath": true,
-		"**/.project": true,
-		"**/.settings": true,
-		"**/.factorypath": true
-	}
-}
+    {
+      "path": "."
+    },
+    {
+      "path": "../yii-template-basic-1"
+    },
+    {
+      "path": "../yii-app-hello"
+    },
+    {
+      "path": "../yii-package-hello"
+    },
+    {
+      "path": "../yii-composer-installer"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    }
+  }
 }

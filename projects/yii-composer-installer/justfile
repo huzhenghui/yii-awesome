@@ -1,0 +1,80 @@
+_: just-choose
+
+just-choose:
+    #!/usr/bin/env sh
+    choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
+    echo "Choose Recipe: ${choose_recipe}"
+    just "${choose_recipe}"
+
+just-list:
+    just --list
+
+# Yii App : 1.1 : Composer Update
+composer-update:
+    cd ./root && composer update
+
+# Yii App : 1.2 : Composer Run-Script post-update-cmd
+composer-run-script-post-update-cmd:
+    cd ./root && composer run-script post-update-cmd
+
+# Yii App : 2.1 : Composer Install
+composer-install:
+    cd ./root && composer install
+
+# Yii App : 2.2 : Composer Run-Script post-install-cmd
+composer-run-script-post-install-cmd:
+    cd ./root && composer run-script post-install-cmd
+
+# Yii App : 3 : Serve
+serve-app:
+    cd ./root && php yii serve
+
+# Yii App : 4 : Open Home
+open-app-home:
+    open 'http://localhost:8080/'
+
+# Yii App : 5 : Open Code by PhpStorm
+phpstorm-app:
+    open -a "PhpStorm" ./root
+
+# Yii App : 6 : Diff Package
+diff-package:
+    kdiff3 ./root/vendor/huzhenghui/yii-composer-installer $(ghq list --full-path https://github.com/huzhenghui/yii-composer-installer)
+
+# Yii App : Clean Runtime Generated Code
+clean-runtime-generated-code:
+    trash --force -- "./root/runtime/debug/"
+    trash --force -- "./root/runtime/HTML/"
+    trash --force -- "./root/runtime/URI/"
+    [[ ! -d "./root/runtime/" ]] || rmdir "./root/runtime/"
+    find "./root/web/assets/" -d -name "[0-9a-f]*" -mindepth 1 -maxdepth 1 -exec trash --force {} \;
+
+# Yii App : Clean Copied Code
+clean-copied-code:
+    # copyFiles
+    trash --force -- "./root/yii"
+    trash --force -- "./root/config/console.php"
+    trash --force -- "./root/config/db.php"
+    trash --force -- "./root/config/params.php"
+    trash --force -- "./root/web/index.php"
+    trash --force -- "./root/config/web.php"
+    [[ ! -d "./root/config/" ]] || rmdir "./root/config/"
+    trash --force -- "./root/controllers/SiteController.php"
+    [[ ! -d "./root/controllers/" ]] || rmdir "./root/controllers/"
+    trash --force -- "./root/views/site/index.php"
+    [[ ! -d "./root/views/site/" ]] || rmdir "./root/views/site/"
+    trash --force -- "./root/views/layouts/main.php"
+    [[ ! -d "./root/views/layouts/" ]] || rmdir "./root/views/layouts/"
+    [[ ! -d "./root/views/" ]] || rmdir "./root/views/"
+    trash --force -- "./root/assets/AppAsset.php"
+    [[ ! -d "./root/assets/" ]] || rmdir "./root/assets/"
+    trash --force -- "./root/web/assets/.gitignore"
+    trash --force -- "./root/widgets/Alert.php"
+    [[ ! -d "./root/widgets/" ]] || rmdir "./root/widgets/"
+    trash --force -- "./root/web/assets/"
+    [[ ! -d "./root/web/" ]] || rmdir "./root/web/"
+
+# Yii App : Clean Vendor
+clean-vendor:
+    trash --force -- "./root/vendor/"
+    trash --force -- "./root/composer.lock"
