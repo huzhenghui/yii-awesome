@@ -1,5 +1,7 @@
 _: just-choose
 
+set dotenv-load := false
+
 just-choose:
     #!/usr/bin/env sh
     choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
@@ -13,7 +15,7 @@ just-list:
 composer-update:
     cd ./root && composer update
 
-# Yii App : 1.2 : Composer Run-Script post-update-cmd
+# Yii App : 1.2(option) : Composer Run-Script post-update-cmd
 composer-run-script-post-update-cmd:
     cd ./root && composer run-script post-update-cmd
 
@@ -21,7 +23,7 @@ composer-run-script-post-update-cmd:
 composer-install:
     cd ./root && composer install
 
-# Yii App : 2.2 : Composer Run-Script post-install-cmd
+# Yii App : 2.2(option) : Composer Run-Script post-install-cmd
 composer-run-script-post-install-cmd:
     cd ./root && composer run-script post-install-cmd
 
@@ -43,38 +45,42 @@ diff-package:
 
 # Yii App : Clean Runtime Generated Code
 clean-runtime-generated-code:
-    trash --force -- "./root/runtime/debug/"
-    trash --force -- "./root/runtime/HTML/"
-    trash --force -- "./root/runtime/URI/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/runtime/debug/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/runtime/HTML/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/runtime/logs/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/runtime/URI/"
     [[ ! -d "./root/runtime/" ]] || rmdir "./root/runtime/"
-    find "./root/web/assets/" -d -name "[0-9a-f]*" -mindepth 1 -maxdepth 1 -exec trash --force {} \;
+    find "./root/web/assets/" -d -name "[0-9a-f]*" -mindepth 1 -maxdepth 1 -exec /usr/local/opt/trash-cli/bin/trash --force {} \;
 
 # Yii App : Clean Copied Code
 clean-copied-code:
     # copyFiles
-    trash --force -- "./root/yii"
-    trash --force -- "./root/config/console.php"
-    trash --force -- "./root/config/db.php"
-    trash --force -- "./root/config/params.php"
-    trash --force -- "./root/web/index.php"
-    trash --force -- "./root/config/web.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/yii"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/console.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/db.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/params.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/web/index.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/web.php"
     [[ ! -d "./root/config/" ]] || rmdir "./root/config/"
-    trash --force -- "./root/controllers/SiteController.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/controllers/SiteController.php"
     [[ ! -d "./root/controllers/" ]] || rmdir "./root/controllers/"
-    trash --force -- "./root/views/site/index.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/views/site/index.php"
     [[ ! -d "./root/views/site/" ]] || rmdir "./root/views/site/"
-    trash --force -- "./root/views/layouts/main.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/views/layouts/main.php"
     [[ ! -d "./root/views/layouts/" ]] || rmdir "./root/views/layouts/"
     [[ ! -d "./root/views/" ]] || rmdir "./root/views/"
-    trash --force -- "./root/assets/AppAsset.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/assets/AppAsset.php"
     [[ ! -d "./root/assets/" ]] || rmdir "./root/assets/"
-    trash --force -- "./root/web/assets/.gitignore"
-    trash --force -- "./root/widgets/Alert.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/web/assets/.gitignore"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/widgets/Alert.php"
     [[ ! -d "./root/widgets/" ]] || rmdir "./root/widgets/"
-    trash --force -- "./root/web/assets/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/web/assets/"
     [[ ! -d "./root/web/" ]] || rmdir "./root/web/"
 
 # Yii App : Clean Vendor
 clean-vendor:
-    trash --force -- "./root/vendor/"
-    trash --force -- "./root/composer.lock"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/vendor/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/composer.lock"
+
+# Yii App : Clean All
+clean-all: clean-runtime-generated-code clean-copied-code clean-vendor
