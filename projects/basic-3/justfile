@@ -1,5 +1,7 @@
 _: just-choose
 
+set dotenv-load := false
+
 just-choose:
     #!/usr/bin/env sh
     choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
@@ -32,30 +34,30 @@ phpstorm-app:
 # Yii App : Clean
 clean-app:
     # copyFiles
-    trash --force -- "./root/yii"
-    trash --force -- "./root/config/console.php"
-    trash --force -- "./root/config/db.php"
-    trash --force -- "./root/config/params.php"
-    trash --force -- "./root/web/index.php"
-    trash --force -- "./root/config/web.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/yii"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/console.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/db.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/params.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/web/index.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/config/web.php"
     [[ ! -d "./root/config/" ]] || rmdir "./root/config/"
-    trash --force -- "./root/controllers/SiteController.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/controllers/SiteController.php"
     [[ ! -d "./root/controllers/" ]] || rmdir "./root/controllers/"
-    trash --force -- "./root/views/site/index.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/views/site/index.php"
     [[ ! -d "./root/views/site/" ]] || rmdir "./root/views/site/"
-    trash --force -- "./root/views/layouts/main.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/views/layouts/main.php"
     [[ ! -d "./root/views/layouts/" ]] || rmdir "./root/views/layouts/"
     [[ ! -d "./root/views/" ]] || rmdir "./root/views/"
-    trash --force -- "./root/assets/AppAsset.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/assets/AppAsset.php"
     [[ ! -d "./root/assets/" ]] || rmdir "./root/assets/"
-    trash --force -- "./root/web/assets/.gitignore"
-    trash --force -- "./root/widgets/Alert.php"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/web/assets/.gitignore"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/widgets/Alert.php"
     [[ ! -d "./root/widgets/" ]] || rmdir "./root/widgets/"
     # Update
-    trash --force -- "./root/vendor/"
-    trash --force -- "./root/composer.lock"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/vendor/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/composer.lock"
     # Runtime
-    trash --force -- "./root/runtime/debug/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/runtime/debug/"
     [[ ! -d "./root/runtime/" ]] || rmdir "./root/runtime/"
-    trash --force -- "./root/web/assets/"
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/web/assets/"
     [[ ! -d "./root/web/" ]] || rmdir "./root/web/"
