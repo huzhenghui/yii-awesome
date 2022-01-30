@@ -1,12 +1,4 @@
 {
-    "write-good.languages": [
-        "markdown"
-    ],
-    "search.useIgnoreFiles": false,
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    }
+  "write-good.languages": ["markdown"],
+  "search.useIgnoreFiles": false
 }
