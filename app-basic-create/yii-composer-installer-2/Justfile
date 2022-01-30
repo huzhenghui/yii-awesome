@@ -1,0 +1,28 @@
+_: just-choose
+
+set dotenv-load := false
+
+just-choose:
+    #!/usr/bin/env sh
+    choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
+    echo "Choose Recipe: ${choose_recipe}"
+    just "${choose_recipe}"
+
+just-list:
+    just --list
+
+# Yii App : 1 : Create Project
+create-project-yii-composer-installer:
+    composer create-project --prefer-dist huzhenghui/yii-composer-installer ./root
+
+# Yii App : 2 : Serve
+serve-app:
+    cd ./root && php yii serve
+
+# Yii App : 3 : Open Home
+open-app-home:
+    open 'http://localhost:8080/'
+
+# Yii App : Clean All
+clean-all:
+    /usr/local/opt/trash-cli/bin/trash --force -- "./root/"
