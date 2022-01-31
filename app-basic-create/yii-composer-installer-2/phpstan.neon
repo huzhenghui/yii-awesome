@@ -1,0 +1,15 @@
+includes:
+    - ./root/vendor/proget-hq/phpstan-yii2/extension.neon
+    - ./phpstan-baseline.neon
+
+parameters:
+    level: 9
+    reportUnmatchedIgnoredErrors: true
+    editorUrl: '/%%file%%:%%line%%'
+    paths: 
+        - ./root/
+    excludePaths:
+        analyse:
+            - ./root/vendor/
+    yii2:
+        config_path: ./root/config/console.php

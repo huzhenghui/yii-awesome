@@ -1,0 +1,14 @@
+includes:
+    - ./root/vendor/proget-hq/phpstan-yii2/extension.neon
+
+parameters:
+    level: 9
+    paths: 
+        - ./root/
+    excludePaths:
+        analyse:
+            - ./root/vendor/
+        analyseAndScan:
+            - ./root/src/
+    yii2:
+        config_path: ./root/config/console.php

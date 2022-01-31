@@ -23,6 +23,12 @@ serve-app:
 open-app-home:
     open 'http://localhost:8080/'
 
+phpstan:
+    phpstan analyse --ansi --memory-limit=1G --autoload-file=./root/vendor/autoload.php --configuration=phpstan.neon
+
+phpstan-generate-baseline:
+    phpstan analyse --ansi --memory-limit=1G --autoload-file=./root/vendor/autoload.php --configuration=generate-baseline.neon --generate-baseline
+
 # Yii App : Clean All
 clean-all:
     /usr/local/opt/trash-cli/bin/trash --force -- "./root/"

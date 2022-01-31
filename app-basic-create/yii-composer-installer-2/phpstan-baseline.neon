@@ -1,0 +1,82 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Property app\\\\assets\\\\AppAsset\\:\\:\\$css type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: root/assets/AppAsset.php
+
+		-
+			message: "#^Property app\\\\assets\\\\AppAsset\\:\\:\\$depends type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: root/assets/AppAsset.php
+
+		-
+			message: "#^Property app\\\\assets\\\\AppAsset\\:\\:\\$js type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: root/assets/AppAsset.php
+
+		-
+			message: "#^If condition is always false\\.$#"
+			count: 1
+			path: root/config/console.php
+
+		-
+			message: "#^If condition is always false\\.$#"
+			count: 1
+			path: root/config/web.php
+
+		-
+			message: "#^Ternary operator condition is always true\\.$#"
+			count: 1
+			path: root/config/web.php
+
+		-
+			message: "#^Method app\\\\controllers\\\\SiteController\\:\\:actions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: root/controllers/SiteController.php
+
+		-
+			message: "#^Method app\\\\controllers\\\\SiteController\\:\\:behaviors\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: root/controllers/SiteController.php
+
+		-
+			message: "#^Parameter \\#1 \\$data of method yii\\\\base\\\\Model\\:\\:load\\(\\) expects array, mixed given\\.$#"
+			count: 2
+			path: root/controllers/SiteController.php
+
+		-
+			message: "#^Ternary operator condition is always true\\.$#"
+			count: 1
+			path: root/controllers/SiteController.php
+
+		-
+			message: "#^Variable \\$content might not be defined\\.$#"
+			count: 1
+			path: root/views/layouts/main.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 8
+			path: root/views/layouts/main.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 1
+			path: root/views/site/index.php
+
+		-
+			message: "#^Method app\\\\widgets\\\\Alert\\:\\:run\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: root/widgets/Alert.php
+
+		-
+			message: "#^Property app\\\\widgets\\\\Alert\\:\\:\\$alertTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: root/widgets/Alert.php
+
+		-
+			message: "#^Property app\\\\widgets\\\\Alert\\:\\:\\$closeButton type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: root/widgets/Alert.php
+
