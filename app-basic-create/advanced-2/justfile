@@ -49,6 +49,22 @@ help-advanced-yii:
 help-advanced-yii-serve:
     cd ./root && php yii help serve
 
+# Advanced : Files
+files:
+    cd ./root && \
+        fd --hidden --no-ignore --full-path '.' \
+            --exclude '/.git/' \
+            --exclude '/.github/' \
+            --exclude '/docs/' \
+            --exclude '/vagrant/' \
+            --exclude '/.gitattributes' \
+            --exclude '/.gitignore' \
+            --exclude '/LICENSE.md' \
+            --exclude '/README.md' \
+            --exclude '/Vagrantfile' \
+            --exclude '/codeception.yml' \
+            --exclude '/docker-compose.yml'
+
 # Advanced : Clean
 clean-advanced:
     trash ./root
