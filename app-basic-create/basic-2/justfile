@@ -33,6 +33,22 @@ open-basic:
 phpstorm-basic:
     open -a "PhpStorm" ./root
 
+# Basic : Files
+files:
+    cd ./root && \
+        fd --hidden --no-ignore --full-path '.' \
+            --exclude '/.git/' \
+            --exclude '/.github/' \
+            --exclude '/tests/' \
+            --exclude '/vagrant/' \
+            --exclude '/.gitattributes' \
+            --exclude '/.gitignore' \
+            --exclude '/LICENSE.md' \
+            --exclude '/README.md' \
+            --exclude '/Vagrantfile' \
+            --exclude '/codeception.yml' \
+            --exclude '/docker-compose.yml'
+
 # Basic : Clean
 clean-basic:
     trash ./root
