@@ -1,5 +1,7 @@
 _: just-choose
 
+set dotenv-load := false
+
 just-choose:
     #!/usr/bin/env sh
     choose_recipe=$(just --summary | tr ' ' '\n' | /usr/local/opt/choose-gui/bin/choose)
@@ -13,9 +15,13 @@ just-list:
 git-clone-basic:
     git clone https://github.com/yiisoft/yii2-app-basic root
 
-# Basic : 2 : Composer Update
+# Basic : 2.1 : Composer Update
 composer-update:
     cd ./root && composer update
+
+# Basic : 2.2 : Patch
+patch:
+    cd ./root && composer require fakerphp/faker:1.13.0 # < v1.14.0
 
 # Basic : 3 : Composer Install
 composer-install:
