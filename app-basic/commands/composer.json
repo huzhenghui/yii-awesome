@@ -1,0 +1,79 @@
+{
+  "name": "huzhenghui/yii-app-basic-commands",
+  "description": "",
+  "type": "project",
+  "authors": [
+    {
+      "name": "胡争辉",
+      "email": "hu@daonao.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2-app-basic": "~2.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.2.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": false
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "huzhenghui\\yii\\composer\\installer\\Installer::postUpdate"
+    ],
+    "update-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer update"
+    ],
+    "help/index": [
+      "php yii help/index"
+    ],
+    "help/list": [
+      "php yii help/list"
+    ],
+    "help/list-action-options/hello/index": [
+      "php yii help/list-action-options hello/index"
+    ],
+    "help/usage/hello/index": [
+      "php yii help/usage hello/index"
+    ],
+    "hello/index": [
+      "php yii hello/index"
+    ],
+    "hello/index/world": [
+      "php yii hello/index world"
+    ],
+    "clear-all": [
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./commands/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./config/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./runtime/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./vendor/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./composer.lock",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./yii"
+    ]
+  },
+  "scripts-descriptions": {
+    "update-command": "composer update",
+    "help/index": "php yii help/index",
+    "help/list": "php yii help/list",
+    "help/list-action-options/hello/index": "php yii help/list-action-options hello/index",
+    "help/usage/hello/index": "php yii help/usage hello/index",
+    "hello/index": "php yii hello/index",
+    "hello/index/world": "php yii hello/index world",
+    "clear-all": "Clear all temporary file"
+  },
+  "autoload": {
+    "psr-4": {
+      "huzhenghui\\yii\\composer\\installer\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
