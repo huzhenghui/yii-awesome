@@ -1,0 +1,72 @@
+{
+  "name": "huzhenghui/yii-app-basic-wrap-layout",
+  "description": "",
+  "type": "project",
+  "authors": [
+    {
+      "name": "胡争辉",
+      "email": "hu@daonao.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2-app-basic": "~2.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.2.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": false
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "huzhenghui\\app_basic_wrap_layout\\Installer::postUpdate"
+    ],
+    "post-install-cmd": [
+      "huzhenghui\\app_basic_wrap_layout\\Installer::postInstall"
+    ],
+    "update-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer update"
+    ],
+    "install-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer install"
+    ],
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php yii serve"
+    ],
+    "clear-all": [
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./assets/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./config/cookieValidationKey.local.php",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./runtime/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./vendor/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./views/site/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./web/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./composer.lock",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./yii"
+    ]
+  },
+  "scripts-descriptions": {
+    "update-command": "composer update",
+    "install-command": "composer install",
+    "serve": "php yii serve",
+    "clear-all": "Clear all temporary file"
+  },
+  "autoload": {
+    "psr-4": {
+      "huzhenghui\\app_basic_wrap_layout\\": "src",
+      "app\\controllers\\": "vendor\\yiisoft\\yii2-app-basic\\controllers",
+      "app\\widgets\\": "vendor\\yiisoft\\yii2-app-basic\\widgets"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
