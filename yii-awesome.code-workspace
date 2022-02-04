@@ -14,6 +14,12 @@
     },
     {
       "path": "../yii-composer-installer"
+    },
+    {
+      "path": "../yii2-app-basic-layout"
+    },
+    {
+      "path": "../yii2-app-basic-site"
     }
   ]
 }
