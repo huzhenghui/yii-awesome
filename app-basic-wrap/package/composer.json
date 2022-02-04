@@ -10,8 +10,8 @@
   ],
   "require": {
     "yiisoft/yii2-app-basic": "~2.0",
-    "huzhenghui/yii2-app-basic-layout": "0.0.3",
-    "huzhenghui/yii2-app-basic-site": "0.0.3"
+    "huzhenghui/yii2-app-basic-layout": "0.0.4",
+    "huzhenghui/yii2-app-basic-site": "0.0.4"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.1.0",
@@ -19,7 +19,7 @@
   },
   "config": {
     "allow-plugins": {
-      "yiisoft/yii2-composer": false
+      "yiisoft/yii2-composer": true
     }
   },
   "scripts": {
