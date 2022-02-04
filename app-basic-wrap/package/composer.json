@@ -10,8 +10,8 @@
   ],
   "require": {
     "yiisoft/yii2-app-basic": "~2.0",
-    "huzhenghui/yii2-app-basic-layout": "0.0.2",
-    "huzhenghui/yii2-app-basic-site": "0.0.2"
+    "huzhenghui/yii2-app-basic-layout": "0.0.3",
+    "huzhenghui/yii2-app-basic-site": "0.0.3"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.1.0",
@@ -62,6 +62,7 @@
       "huzhenghui\\app_basic_wrap_package\\": "src",
       "app\\assets\\": "vendor\\yiisoft\\yii2-app-basic\\assets",
       "app\\controllers\\": "vendor\\yiisoft\\yii2-app-basic\\controllers",
+      "app\\models\\": "vendor\\yiisoft\\yii2-app-basic\\models",
       "app\\widgets\\": "vendor\\yiisoft\\yii2-app-basic\\widgets"
     }
   },
