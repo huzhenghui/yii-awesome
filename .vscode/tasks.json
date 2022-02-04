@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compare yii2-app-basic-layout",
+      "type": "shell",
+      "command": "/usr/local/bin/code",
+      "args": [
+        "${workspaceFolder:yii-awesome}/app-basic-wrap/package/vendor/huzhenghui/yii2-app-basic-layout",
+        "${workspaceFolder:yii2-app-basic-layout}"
+      ],
+      "options": {
+        "env": {
+          "COMPARE_FOLDERS": "DIFF"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Compare yii2-app-basic-site",
+      "type": "shell",
+      "command": "/usr/local/bin/code",
+      "args": [
+        "${workspaceFolder:yii-awesome}/app-basic-wrap/package/vendor/huzhenghui/yii2-app-basic-site",
+        "${workspaceFolder:yii2-app-basic-site}"
+      ],
+      "options": {
+        "env": {
+          "COMPARE_FOLDERS": "DIFF"
+        }
+      },
+      "problemMatcher": []
+    }
+  ]
+}
