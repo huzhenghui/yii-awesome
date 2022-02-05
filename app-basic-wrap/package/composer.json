@@ -10,7 +10,7 @@
   ],
   "require": {
     "yiisoft/yii2-app-basic": "~2.0",
-    "huzhenghui/yii2-app-basic-layout": "0.0.4",
+    "huzhenghui/yii2-app-basic-layout": "0.0.5",
     "huzhenghui/yii2-app-basic-site": "0.0.4"
   },
   "require-dev": {
