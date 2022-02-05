@@ -6,4 +6,5 @@ $config['modules']['basiclayout']['class'] = 'huzhenghui\yii2\app_basic\layout\M
 $config['modules']['basicsite']['class'] = 'huzhenghui\yii2\app_basic\site\Module';
 $config['defaultRoute'] = 'basicsite/site/index';
 $config['components']['user']['identityClass'] = 'huzhenghui\yii2\app_basic\site\models\User';
+$config['components']['errorHandler']['errorAction'] = 'basicsite/site/error';
 return $config;
