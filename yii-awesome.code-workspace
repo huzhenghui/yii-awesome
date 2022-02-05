@@ -16,6 +16,9 @@
       "path": "../yii-composer-installer"
     },
     {
+      "path": "../yii2-app-basic-files"
+    }
+    {
       "path": "../yii2-app-basic-layout"
     },
     {
