@@ -17,9 +17,9 @@ class Installer extends LibraryInstaller
     {
         YiiComposerInstaller::copyFiles(array(
             "./config/cookieValidationKey.dist.php" => "./config/cookieValidationKey.local.php",
-            "./vendor/yiisoft/yii2-app-basic/yii" => "./yii",
-            "./vendor/yiisoft/yii2-app-basic/web/index.php" => "./web/index.php",
-            "./vendor/yiisoft/yii2-app-basic/web/assets/.gitignore" => "./web/assets/.gitignore",
+            "./vendor/huzhenghui/yii2-app-basic-files/yii" => "./yii",
+            "./vendor/huzhenghui/yii2-app-basic-files/web/index.php" => "./web/index.php",
+            "./vendor/huzhenghui/yii2-app-basic-files/web/assets/.gitignore" => "./web/assets/.gitignore",
         ));
     }
     /**
@@ -27,6 +27,6 @@ class Installer extends LibraryInstaller
      */
     public static function postInstall($event): void
     {
-        YiiComposerInstaller::generateCookieValidationKey("config/cookieValidationKey.local.php");
+        YiiComposerInstaller::generateCookieValidationKey("./config/cookieValidationKey.local.php");
     }
 }
