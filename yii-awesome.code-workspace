@@ -4,25 +4,44 @@
       "path": "."
     },
     {
+      "name": "app-basic-create:yii-template-basic-1",
       "path": "../yii-template-basic-1"
     },
     {
+      "name": "app-basic-create:yii-app-hello",
       "path": "../yii-app-hello"
     },
     {
+      "name": "app-basic-create:yii-package-hello",
       "path": "../yii-package-hello"
     },
     {
+      "name": "app-basic-create:yii-composer-installer",
       "path": "../yii-composer-installer"
     },
     {
+      "name": "app basic wrap:yii2-app-basic-files",
       "path": "../yii2-app-basic-files"
-    }
+    },
     {
+      "name": "app basic wrap:yii2-app-basic-layout",
       "path": "../yii2-app-basic-layout"
     },
     {
+      "name": "app basic wrap:yii2-app-basic-site",
       "path": "../yii2-app-basic-site"
+    },
+    {
+      "name": "bootstrap4:yii-bootstrap4-starter",
+      "path": "../yii-bootstrap4-starter"
+    },
+    {
+      "name": "bootstrap4:yii-bootstrap4-starter",
+      "path": "../yii-bootstrap4-starter"
+    },
+    {
+      "name": "bootstrap4:yii-bootstrap4-user",
+      "path": "../yii-bootstrap4-user"
     }
   ]
 }
